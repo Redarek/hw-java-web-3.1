@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import javax.print.DocFlavor;
 import java.util.List;
@@ -19,7 +20,7 @@ public class CallbackTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("web.chrome.driver", "/driver/linux/chromedriver");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
