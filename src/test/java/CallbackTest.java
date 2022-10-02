@@ -19,7 +19,7 @@ public class CallbackTest {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("web.chrome.driver", "driver/linux/chromedriver");
     }
 
     @BeforeEach
@@ -46,7 +46,6 @@ public class CallbackTest {
         driver.findElement(By.className("checkbox__text")).click();
         driver.findElement(By.className("button__text")).click();
         String text = driver.findElement(By.className("paragraph")).getText();
-
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 }
